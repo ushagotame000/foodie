@@ -8,6 +8,12 @@ module.exports = {
         primary: "#ffc001",
         secondary: "#ff0c01",
       },
+      animation: {
+        "animate-fade": "fadeIn 3s",
+      },
+      spacing: {
+        "34vw": "34vw",
+      },
     },
     container: {
       center: true,
