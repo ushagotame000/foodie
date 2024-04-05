@@ -27,7 +27,7 @@ const DisplayItem = () => {
   return (
     <div>
       <div className="food-display" id="food-display">
-        <h2 className="font-mono text-xl font-bold text-gray-700">
+        <h2 className="font-mono text-2xl font-bold text-gray-900 py-2 pt-2">
           Top Dishes near you
         </h2>
         <div className="food-display-list grid grid-cols-4 gap-y-2 gap-x-2">

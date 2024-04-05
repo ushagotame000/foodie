@@ -7,16 +7,18 @@ import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <div className="app w-5/6 mx-auto">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/place-order" element={<PlaceOrder />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <div className="app w-5/6 mx-auto">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/place-order" element={<PlaceOrder />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </>
   );
 }
 
