@@ -30,7 +30,7 @@ const DisplayItem = () => {
         <h2 className="font-mono text-xl font-bold text-gray-700">
           Top Dishes near you
         </h2>
-        <div className="food-display-list flex min-w-96">
+        <div className="food-display-list grid grid-cols-4 gap-y-2 gap-x-2">
           {food_list.map((item, index) => (
             <FoodItem
               key={index}
