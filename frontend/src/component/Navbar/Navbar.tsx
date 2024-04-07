@@ -1,15 +1,26 @@
 import React, { useState } from "react";
 // import { FaCartShopping } from "react-icons/fa6";
 import { assets } from "../../assets/assets";
-const Navbar = () => {
+import { Link } from "react-router-dom";
+
+interface NavbarProps {
+  setShowLogin: (value: boolean) => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("Home");
 
   return (
     <>
-      <div className="navbar py-0 px-[20px] flex justify-between items-center">
-        <img src={assets.logo} alt="" className="logo w-20 " />
-        <ul className="navbar-menu flex list-none gap-12 decoration-gray-500 text-lg ">
-          <li
+      <div className="navbar py-0 px-[20px] flex justify-between items-center ">
+        <img
+          src={assets.logo}
+          alt=""
+          className="logo w-20 lg::w-140  md:gap-7 "
+        />
+        <ul className="navbar-menu flex list-none gap-12 decoration-gray-500 text-lg  lg:gap-5  md:text-l ">
+          <Link
+            to="/"
             onClick={() => setMenu("Home")}
             className={
               menu === "Home"
@@ -18,9 +29,10 @@ const Navbar = () => {
             }
           >
             Home
-          </li>
-          <li
-            onClick={() => setMenu("Menu")}
+          </Link>
+          <a
+            href="#food-display"
+            onClick={() => setMenu("food-display")}
             className={
               menu === "Menu"
                 ? "active border-b-2 border-solid border-gray-400 cursor-pointer"
@@ -28,18 +40,20 @@ const Navbar = () => {
             }
           >
             Menu
-          </li>
-          <li
-            onClick={() => setMenu("About")}
+          </a>
+          <a
+            href="#app-download"
+            onClick={() => setMenu("app-download")}
             className={
-              menu === "About"
+              menu === "app-download"
                 ? "active border-b-2 border-solid border-gray-400 cursor-pointer"
                 : ""
             }
           >
-            About
-          </li>
-          <li
+            Mobile-app
+          </a>
+          <a
+            href="#footer"
             onClick={() => setMenu("Contact")}
             className={
               menu === "Contact"
@@ -48,14 +62,17 @@ const Navbar = () => {
             }
           >
             Contact
-          </li>
+          </a>
         </ul>
-        <div className="navbar-right flex items-center gap-11">
-          <img src={assets.search_icon} alt="" />
+        <div className="navbar-right flex items-center gap-11 lg:gap-7 md:gap-5">
+          <img src={assets.search_icon} alt="" className="lg:w-6  md:w-5" />
           <div className="navbar-search-icon relative">
             <img src={assets.basket_icon} alt="" />
           </div>
-          <button className="bg-gradient-to-r from-primary to-secondary text-white px-4 py-1 rounded-full hover:scale-105 duration-300 flex item-center gap-3 border-y-amber-800 transition ease-out hover:ease-in">
+          <button
+            onClick={() => setShowLogin(true)}
+            className="bg-gradient-to-r from-primary to-secondary text-white px-4 py-1 rounded-full hover:scale-105 duration-300 flex item-center gap-3 border-y-amber-800  ease-out hover: transition-transform"
+          >
             Sign IN
           </button>
         </div>

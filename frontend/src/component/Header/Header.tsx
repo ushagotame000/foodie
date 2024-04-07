@@ -2,11 +2,11 @@ import React from "react";
 const Header = () => {
   return (
     <>
-      <div className=" w-full mx-4 m-auto bg-no-repeat bg-contain relative  ">
+      <div className=" w-full mx-4 m-auto bg-no-repeat bg-contain relative scroll-smooth  ">
         <img
-          src="header_img.png"
+          src="bg-image.jpg"
           alt=""
-          className=" w-full object-cover md:h-full "
+          className=" w-full object-cover md:h-full rounded-3xl "
         />
         <div className="absolute top-0 left-0 flex flex-col items-start justify-center h-full px-8 py-8 gap-8">
           <h2 className="font-medium font-mono text-white text-xl md:text-4xl lg:text-5xl  hover:animate-bounce max-w-96">
