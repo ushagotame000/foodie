@@ -13,11 +13,13 @@ const Navbar: React.FC<NavbarProps> = ({ setShowLogin }) => {
   return (
     <>
       <div className="navbar py-0 px-[20px] flex justify-between items-center ">
-        <img
-          src={assets.logo}
-          alt=""
-          className="logo w-20 lg::w-140  md:gap-7 "
-        />
+        <Link to="/">
+          <img
+            src={assets.logo}
+            alt=""
+            className="logo w-20 lg::w-140  md:gap-7 "
+          />
+        </Link>
         <ul className="navbar-menu flex list-none gap-12 decoration-gray-500 text-lg  lg:gap-5  md:text-l ">
           <Link
             to="/"
@@ -67,7 +69,9 @@ const Navbar: React.FC<NavbarProps> = ({ setShowLogin }) => {
         <div className="navbar-right flex items-center gap-11 lg:gap-7 md:gap-5">
           <img src={assets.search_icon} alt="" className="lg:w-6  md:w-5" />
           <div className="navbar-search-icon relative">
-            <img src={assets.basket_icon} alt="" />
+            <Link to="/cart">
+              <img src={assets.basket_icon} alt="" />
+            </Link>
           </div>
           <button
             onClick={() => setShowLogin(true)}

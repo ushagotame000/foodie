@@ -1,29 +1,10 @@
-// import React from "react";
-// import { food_list } from "../../assets/assets";
-// import FoodItem from "./FoodItem";
-// const DisplayItem = () => {
-//   return <div>
-// <div className="food-display" id="food-display">
-// <h2> Top Dishes near you</h2>
-// <div className="food-display-list">
-//     {food-listenerCount.map((item,index)=>
-//     return <FoodItem key ={index} id={item._id} name={item.name} description={item.description} price=>
-
-//     )}
-// </div>
-
-// </div>
-
-//   </div>;
-// };
-
-// export default DisplayItem;
-
 import React from "react";
 import { food_list } from "../../assets/assets";
 import FoodItem from "./FoodItem";
 
 const DisplayItem = () => {
+  const category = "All";
+
   return (
     <div>
       <div className="food-display" id="food-display">
@@ -31,16 +12,21 @@ const DisplayItem = () => {
           Top Dishes near you
         </h2>
         <div className="food-display-list grid lg:grid-cols-4 gap-y-2 gap-x-2 md:grid-cols-3 sm:grid-cols-1">
-          {food_list.map((item, index) => (
-            <FoodItem
-              key={index}
-              id={item._id}
-              name={item.name}
-              description={item.description}
-              price={item.price}
-              image={item.image} // Assuming you have an 'image' property in your food item object
-            />
-          ))}
+          {food_list.map((item, index) => {
+            if (category === "All" || category === item.category) {
+              return (
+                <FoodItem
+                  key={index}
+                  id={item._id}
+                  name={item.name}
+                  description={item.description}
+                  price={item.price}
+                  image={item.image}
+                />
+              );
+            }
+            return null;
+          })}
         </div>
       </div>
     </div>
