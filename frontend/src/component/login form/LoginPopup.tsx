@@ -8,7 +8,8 @@ interface LoginPopupProps {
 const LoginPopup: React.FC<LoginPopupProps> = ({ setShowLogin }) => {
   const [currState, setCurrState] = useState("Sign Up");
   return (
-    <div className="login-popup absolute z-30 w-full h-auto  grid place-content-center bg-none ">
+    <div className='bg-black w-screen'>
+      <div className="login-popup  z-30 fixed w-full h-screen  grid place-content-center bg-black/50 ">
       <form
         action=""
         className="login-popup-container  max-w-96 bg-white  flex flex-col gap-7 rounded-xl text-base p-6 justify-center  mt-24  "
@@ -75,6 +76,7 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ setShowLogin }) => {
           </p>
         )}{" "}
       </form>
+    </div>
     </div>
   );
 };
