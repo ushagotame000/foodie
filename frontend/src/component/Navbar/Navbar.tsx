@@ -13,59 +13,63 @@ const Navbar: React.FC<NavbarProps> = ({ setShowLogin }) => {
   return (
     <>
       <div className="navbar py-0 px-[20px] flex justify-between items-center ">
-        <Link to="/">
-          <img
-            src={assets.logo}
-            alt=""
-            className="logo w-20 lg::w-140  md:gap-7 "
-          />
-        </Link>
-        <ul className="navbar-menu flex list-none gap-12 decoration-gray-500 text-lg  lg:gap-5  md:text-l ">
-          <Link
-            to="/"
-            onClick={() => setMenu("Home")}
-            className={
-              menu === "Home"
-                ? "active border-b-2 border-solid border-gray-400 cursor-pointer"
-                : ""
-            }
-          >
-            Home
+        <div className="">
+          <Link to="/">
+            <img
+              src={assets.logo}
+              alt=""
+              className="logo w-20 lg::w-140  md:gap-7 "
+            />
           </Link>
-          <a
-            href="#food-display"
-            onClick={() => setMenu("food-display")}
-            className={
-              menu === "Menu"
-                ? "active border-b-2 border-solid border-gray-400 cursor-pointer"
-                : ""
-            }
-          >
-            Menu
-          </a>
-          <a
-            href="#app-download"
-            onClick={() => setMenu("app-download")}
-            className={
-              menu === "app-download"
-                ? "active border-b-2 border-solid border-gray-400 cursor-pointer"
-                : ""
-            }
-          >
-            Mobile-app
-          </a>
-          <a
-            href="#footer"
-            onClick={() => setMenu("Contact")}
-            className={
-              menu === "Contact"
-                ? "active border-b-2 border-solid border-gray-400 cursor-pointer"
-                : ""
-            }
-          >
-            Contact
-          </a>
-        </ul>
+        </div>
+        <div className="hidden md:block">
+          <ul className="navbar-menu flex list-none gap-12 decoration-gray-500 text-lg   lg:gap-5  md:text-l  ">
+            <Link
+              to="/"
+              onClick={() => setMenu("Home")}
+              className={
+                menu === "Home"
+                  ? "active border-b-2 border-solid border-gray-400 cursor-pointer"
+                  : ""
+              }
+            >
+              Home
+            </Link>
+            <a
+              href="#food-display"
+              onClick={() => setMenu("food-display")}
+              className={
+                menu === "Menu"
+                  ? "active border-b-2 border-solid border-gray-400 cursor-pointer"
+                  : ""
+              }
+            >
+              Menu
+            </a>
+            <a
+              href="#app-download"
+              onClick={() => setMenu("app-download")}
+              className={
+                menu === "app-download"
+                  ? "active border-b-2 border-solid border-gray-400 cursor-pointer"
+                  : ""
+              }
+            >
+              Mobile-app
+            </a>
+            <a
+              href="#footer"
+              onClick={() => setMenu("Contact")}
+              className={
+                menu === "Contact"
+                  ? "active border-b-2 border-solid border-gray-400 cursor-pointer"
+                  : ""
+              }
+            >
+              Contact
+            </a>
+          </ul>
+        </div>
         <div className="navbar-right flex items-center gap-11 lg:gap-7 md:gap-5">
           <img src={assets.search_icon} alt="" className="lg:w-6  md:w-5" />
           <div className="navbar-search-icon relative">
