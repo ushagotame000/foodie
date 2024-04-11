@@ -1,11 +1,12 @@
-import React, { useContext } from "react";
-import { StoreContext } from "../../component/Content/StoreContext";
-import { food_list } from "../../assets/assets";
+// import React, { useContext } from "react";
+// import { StoreContext } from "../../component/Content/StoreContext";
+// import { food_list } from "../../assets/assets";
 import Footer from "../../component/Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { cartItems } = useContext(StoreContext);
-
+  // const { cartItems } = useContext(StoreContext);
+  const navigate = useNavigate();
   return (
     <div>
       <div className="cart  mt-24 ml-24">
@@ -20,7 +21,7 @@ const Cart = () => {
           </div>
           <br />
           <hr />
-          {food_list.map((item, index) => {
+          {/* {food_list.map((item, index) => {
             if (cartItems[item._id] > 0) {
               return (
                 <div className="cart-item-title" key={index}>
@@ -32,10 +33,10 @@ const Cart = () => {
                 </div>
               );
             }
-          })}
+          })} */}
         </div>
 
-        <div className="cart-bottom mt-16 flex justify-between gap-5">
+        <div className="cart-bottom mt-16 flex  flex-wrap justify-between gap-5 md:flex-wrap-reverse">
           <div className="cart-total flex-1 flex-col gap-5">
             <h2 className="font-bold font-sans text-3xl py-4"> Cart Total</h2>
 
@@ -56,11 +57,14 @@ const Cart = () => {
               </div>
             </div>
 
-            <button className="border-none bg-orange-400 m-5 px-6 py-0 h-9 rounded-md cursor-pointer text-white hover:bg-orange-500">
+            <button
+              onClick={() => navigate("/Place-Order")}
+              className="border-none bg-orange-400 m-5 px-6 py-0 h-9 rounded-md cursor-pointer text-white hover:bg-orange-500"
+            >
               PROCEED TO CHECKOUT
             </button>
           </div>
-          <div className="promocode flex-1 ">
+          <div className="promocode flex-1  md:justify-start">
             <div>
               <p className="text-gray-700 font-sans  font-semibold ">
                 If you have a promo code, Enter it here
@@ -79,6 +83,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
